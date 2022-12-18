@@ -37,10 +37,6 @@ function displaySalonInfo(){
     `;
     document.getElementById("info").innerHTML=tmp;
 }
-function init(){
-displaySalonInfo();
-}
-window.onload=init;
 
 function displayServicesInfo(){
     let tmp=`
