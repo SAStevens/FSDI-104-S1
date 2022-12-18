@@ -15,7 +15,7 @@ console.log(salon);
 
 function displaySalonInfo(){
     let tmp=`
-    <p>Welcome to the ${salon.name} we are open from ${salon.hours.open} to ${salon.hours.close}</p>
+    <p>Welcome to the ${salon.name}. We are open from ${salon.hours.open} to ${salon.hours.close} Monday thru Saturday.</p>
     `;
     document.getElementById("info").innerHTML=tmp;
 }

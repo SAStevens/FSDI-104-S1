@@ -13,13 +13,44 @@ let salon={
 
 console.log(salon);
 
+let services={
+    type:["Bathing", " Nail Trimming", " Desheding/Dematting", " Body Trimming", " and Blow Drying"],
+    critter:["Cats", " Dogs", " Rabbits", " Hamsters", " and Guinea Pigs"]
+}
+
+console.log(services);
+
 function displaySalonInfo(){
     let tmp=`
-    <p>Welcome to the ${salon.name} we are open from ${salon.hours.open} to ${salon.hours.close}</p>
+    <p>${salon.name} offers a full line of pet grooming services for both cats and dogs.</p>
     `;
     document.getElementById("info").innerHTML=tmp;
 }
 function init(){
 displaySalonInfo();
+}
+window.onload=init;
+
+function displaySalonInfo(){
+    let tmp=`
+    <p>${salon.name} offers a full line of pet grooming services for both cats and dogs.</p>
+    `;
+    document.getElementById("info").innerHTML=tmp;
+}
+function init(){
+displaySalonInfo();
+}
+window.onload=init;
+
+function displayServicesInfo(){
+    let tmp=`
+    <p>${salon.name} offers a full line of pet grooming services for your convenience including:</p>
+    <p>${services.type}</p>
+    <p>for ${services.critter}</p>
+    `;
+    document.getElementById("info").innerHTML=tmp;
+}
+function init(){
+displayServicesInfo();
 }
 window.onload=init;
