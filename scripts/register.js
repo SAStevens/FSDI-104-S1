@@ -24,9 +24,6 @@ function Pet(name,age,gender,breed,service,owner,phone){
     this.contactPhone = phone;
 }
 
-function displayInfo(){
-}
-
 let inputName = document.getElementById("txtName");
 let inputAge = document.getElementById("txtAge");
 let inputGender = document.getElementById("txtGender");
@@ -38,7 +35,7 @@ let inputPhone = document.getElementById("txtPhone");
 
 function register(){
     // get the values from the html
-    console.log(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value);
+    // console.log(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value);
 
     // create a new object
     let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value);
@@ -47,19 +44,27 @@ function register(){
     petSalon.pets.push(newPet);
 
     // display the object on the console
-    console.log(newPet);
-    console.log(petSalon.pets);
+    // alert("You have " + petSalon.pets.length + " pets in the salon.");
+    // console.log(newPet);
+    // console.log(petSalon.pets);
+    displayInfo();
+    displayPetCards();
+    clearForm();
 }
 
 function clearForm(){
     inputName.value = "";
-    inputAge.value = 0;
+    inputAge.value = "";
     inputGender.value = "";
     inputBreed.value = "";
     inputService.value = "";
     inputOwner.value = "";
     inputPhone.value = "";
 }
+
+// function displayInfo(){
+//     document.getElementById("info").innerHTML="You have " + petSalon.pets.length + " pets in the salon";
+// }
 
 function init(){
 
@@ -68,10 +73,9 @@ function init(){
     let lassie = new Pet("Lassie",2,"Female","Collie","Trim Nails","Timmy","333-333-3333"); // creating the object
 
     petSalon.pets.push(scooby,fido,lassie);// adding the pets to the array
-    console.log(petSalon.pets[0].name);
-    console.log(petSalon.pets[1].name);
-    console.log(petSalon.pets[2].name);
+    displayInfo();
+    displayPetCards();
     
 }
 
-window.onload = init;
+window.onload = init;//Waiting to render the html
