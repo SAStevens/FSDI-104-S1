@@ -13,6 +13,8 @@ let petSalon = {
     pets:[]
 }
 
+let c=0;//Global variable
+
 // constuctor
 function Pet(name,age,gender,breed,service,owner,phone){
     this.name = name;
@@ -20,8 +22,9 @@ function Pet(name,age,gender,breed,service,owner,phone){
     this.gender = gender;
     this.breed = breed;
     this.service = service;
-    this.ownerName = owner;
-    this.contactPhone = phone;
+    this.owner = owner;
+    this.phone = phone;
+    this.id=c++;
 }
 
 let inputName = document.getElementById("txtName");
@@ -32,24 +35,45 @@ let inputService = document.getElementById("txtService");
 let inputOwner = document.getElementById("txtOwner");
 let inputPhone = document.getElementById("txtPhone");
 
+function validatePet(thePet){
+    let validation=true;
+        inputName.classList.remove("alert-error");
+        inputBreed.classList.remove("alert-error");
+        inputService.classList.remove("alert-error");
+
+
+    if(thePet.name==""){
+        validation=false;
+        inputName.classList.add("alert-error");
+    }
+
+    if(thePet.breed==""){
+        validation=false;
+        inputBreed.classList.add("alert-error");
+    }
+
+    if(thePet.service==""){
+        validation=false;
+        inputService.classList.add("alert-error");
+    }
+       
+    return validation;
+}
+
 
 function register(){
-    // get the values from the html
-    // console.log(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value);
 
-    // create a new object
     let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value);
     
-    // push it to the array
+    if(validatePet(newPet)==true){
+
     petSalon.pets.push(newPet);
 
-    // display the object on the console
-    // alert("You have " + petSalon.pets.length + " pets in the salon.");
-    // console.log(newPet);
-    // console.log(petSalon.pets);
     displayInfo();
     displayPetCards();
     clearForm();
+
+    }
 }
 
 function clearForm(){
@@ -62,9 +86,26 @@ function clearForm(){
     inputPhone.value = "";
 }
 
-// function displayInfo(){
-//     document.getElementById("info").innerHTML="You have " + petSalon.pets.length + " pets in the salon";
-// }
+function deletePet(id){
+
+    console.log("deleting pet " + id);
+    let deleteIndex;
+
+    for(let i=0;i<petSalon.pets.length;i++){
+        let pet=petSalon.pets[i];
+        if(id==pet.id){
+            deleteIndex=i;
+        }
+
+    }
+    document.getElementById(id).remove(); 
+
+    petSalon.pets.splice(deleteIndex,1);
+
+    displayInfo();
+
+}
+
 
 function init(){
 
