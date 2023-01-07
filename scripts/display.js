@@ -23,6 +23,6 @@ function displayPetCards(){
 }
 
 function displayInfo(){
-    document.getElementById("info").innerHTML = "You have " + petSalon.pets.length + " pets in the salon";
+    document.getElementById("info").innerHTML = "There are currently " + petSalon.pets.length + " pets in the salon";
 } 
 

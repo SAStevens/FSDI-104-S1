@@ -38,14 +38,29 @@ let inputPhone = document.getElementById("txtPhone");
 function validatePet(thePet){
     let validation=true;
         inputName.classList.remove("alert-error");
+        inputAge.classList.remove("alert-error");
+        inputGender.classList.remove("alert-error");
         inputBreed.classList.remove("alert-error");
         inputService.classList.remove("alert-error");
+        inputOwner.classList.remove("alert-error");
+        inputPhone.classList.remove("alert-error");
 
 
     if(thePet.name==""){
         validation=false;
         inputName.classList.add("alert-error");
     }
+
+    if(thePet.age==""){
+        validation=false;
+        inputAge.classList.add("alert-error");
+    }
+
+    if(thePet.gender==""){
+        validation=false;
+        inputGender.classList.add("alert-error");
+    }
+    
 
     if(thePet.breed==""){
         validation=false;
@@ -55,6 +70,16 @@ function validatePet(thePet){
     if(thePet.service==""){
         validation=false;
         inputService.classList.add("alert-error");
+    }
+
+    if(thePet.owner==""){
+        validation=false;
+        inputOwner.classList.add("alert-error");
+    }
+
+    if(thePet.phone==""){
+        validation=false;
+        inputPhone.classList.add("alert-error");
     }
        
     return validation;
