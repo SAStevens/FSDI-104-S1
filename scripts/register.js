@@ -45,46 +45,36 @@ function validatePet(thePet){
         inputOwner.classList.remove("alert-error");
         inputPhone.classList.remove("alert-error");
 
-
     if(thePet.name==""){
         validation=false;
         inputName.classList.add("alert-error");
     }
-
     if(thePet.age==""){
         validation=false;
         inputAge.classList.add("alert-error");
     }
-
     if(thePet.gender==""){
         validation=false;
         inputGender.classList.add("alert-error");
     }
-    
-
     if(thePet.breed==""){
         validation=false;
         inputBreed.classList.add("alert-error");
     }
-
     if(thePet.service==""){
         validation=false;
         inputService.classList.add("alert-error");
     }
-
     if(thePet.owner==""){
         validation=false;
         inputOwner.classList.add("alert-error");
     }
-
     if(thePet.phone==""){
         validation=false;
         inputPhone.classList.add("alert-error");
-    }
-       
+    }   
     return validation;
 }
-
 
 function register(){
 
@@ -130,7 +120,6 @@ function deletePet(id){
     displayInfo();
 
 }
-
 
 function init(){
 
