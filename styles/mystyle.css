@@ -7,11 +7,11 @@
 .petCard{
     background-color: lightblue;
     border: 1px solid gray;
-    margin: 15px;
+    border-radius:10px;
+    margin: 25px;
     padding: 10px;
 }
 
 .alert-error{
     border: 2px solid red;
 }
-
