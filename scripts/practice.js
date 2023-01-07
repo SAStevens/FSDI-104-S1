@@ -17,6 +17,6 @@
 // let p = document.querySelectorAll(".container"); //returning a collection of elements
 // console.log(p);
 
-function hideInfo(){
-   document.querySelector("body").style.display="none"
-}
+// function hideInfo(){
+//    document.querySelector("body").style.display="none"
+// }
